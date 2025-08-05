@@ -6,9 +6,16 @@ import { NewsCard } from "./NewsCard";
 interface NewsListProps {
   posts: NewsPost[];
   isLoading: boolean;
+  onLoadMore?: () => void;
+  hasMore?: boolean;
 }
 
-export function NewsList({ posts, isLoading }: NewsListProps) {
+export function NewsList({
+  posts,
+  isLoading,
+  onLoadMore,
+  hasMore,
+}: NewsListProps) {
   if (isLoading) {
     return (
       <div className="flex justify-center items-center h-64">
@@ -50,10 +57,23 @@ export function NewsList({ posts, isLoading }: NewsListProps) {
   }
 
   return (
-    <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-      {posts.map((post, index) => (
-        <NewsCard key={`${post.url}-${index}`} post={post} index={index} />
-      ))}
-    </div>
+    <>
+      <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+        {posts.map((post, index) => (
+          <NewsCard key={`${post.url}-${index}`} post={post} index={index} />
+        ))}
+      </div>
+
+      {hasMore && onLoadMore && (
+        <div className="mt-8 flex justify-center">
+          <button
+            onClick={onLoadMore}
+            className="px-6 py-2 text-sm font-medium text-primary border border-primary rounded-full hover:bg-primary hover:text-white transition"
+          >
+            Load More
+          </button>
+        </div>
+      )}
+    </>
   );
 }

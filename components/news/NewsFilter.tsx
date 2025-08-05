@@ -43,7 +43,7 @@ export function NewsFilter({
     const container = containerRef.current;
     if (container) {
       container.addEventListener("scroll", checkScroll);
-      checkScroll(); // Initial check
+      checkScroll();
       return () => container.removeEventListener("scroll", checkScroll);
     }
   }, [sources]);

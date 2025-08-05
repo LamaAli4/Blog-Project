@@ -1,13 +1,22 @@
 "use client";
 
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useNews } from "@/hooks/useNews";
 import { NewsFilter } from "@/components/news/NewsFilter";
 import { NewsList } from "@/components/news/NewsList";
 
 export default function NewsPage() {
-  const { posts, sources, isLoading, selectedCategory } = useNews();
+  const [visibleCount, setVisibleCount] = useState(6);
   const router = useRouter();
+  const { posts, sources, isLoading, selectedCategory } = useNews();
+
+  const handleLoadMore = () => {
+    setVisibleCount((prev) => prev + 6);
+  };
+
+  const displayedPosts = posts.slice(0, visibleCount);
+  const hasMore = visibleCount < posts.length;
 
   const clearFilter = () => {
     router.push("/news");
@@ -21,7 +30,12 @@ export default function NewsPage() {
           selectedCategory={selectedCategory}
           onClearFilter={clearFilter}
         />
-        <NewsList posts={posts} isLoading={isLoading} />
+        <NewsList
+          posts={displayedPosts}
+          isLoading={isLoading}
+          onLoadMore={handleLoadMore}
+          hasMore={hasMore}
+        />
       </div>
     </section>
   );

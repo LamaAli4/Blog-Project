@@ -19,7 +19,7 @@ export function NewsCard({ post, index }: NewsCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      whileHover={{ y: -8 }}
+      whileHover={{ scale: 1.02 }}
     >
       <Card className="group cursor-pointer overflow-hidden hover:shadow-2xl transition-all duration-500 border-0 bg-card/80 backdrop-blur-sm hover:bg-card/90 h-full">
         <CardHeader className="p-0">

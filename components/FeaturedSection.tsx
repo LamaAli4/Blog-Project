@@ -133,7 +133,7 @@ const FeaturedSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-sm text-primary font-medium hover:underline"
+                className="text-sm text-primary font-medium hover:underline cursor-pointer"
               >
                 View All Articles →
               </motion.button>
