@@ -112,9 +112,18 @@ const FeaturedSection = () => {
                         {post.description}
                       </p>
                       <a
-                        href={post.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        href="#"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          const slug = encodeURIComponent(
+                            post.title.toLowerCase().replace(/\s+/g, "-")
+                          );
+                          sessionStorage.setItem(
+                            "selectedArticle",
+                            JSON.stringify(post)
+                          );
+                          router.push(`/news/${slug}`);
+                        }}
                         className="flex items-center text-primary font-medium group-hover:underline"
                       >
                         Read more
@@ -133,7 +142,8 @@ const FeaturedSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-sm text-primary font-medium hover:underline cursor-pointer"
+                className="px-6 py-2 text-sm font-medium text-primary border border-primary rounded-full 
+                hover:bg-primary hover:text-white transition cursor-pointer"
               >
                 View All Articles →
               </motion.button>

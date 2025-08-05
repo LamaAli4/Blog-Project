@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Calendar } from "lucide-react";
 import { NewsPost } from "@/types/news";
+import { useRouter } from "next/navigation";
 
 interface NewsCardProps {
   post: NewsPost;
@@ -13,6 +14,7 @@ interface NewsCardProps {
 }
 
 export function NewsCard({ post, index }: NewsCardProps) {
+  const router = useRouter();
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -68,9 +70,15 @@ export function NewsCard({ post, index }: NewsCardProps) {
               </span>
             )}
             <a
-              href={post.url}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                const slug = encodeURIComponent(
+                  post.title.toLowerCase().replace(/\s+/g, "-")
+                );
+                sessionStorage.setItem("selectedArticle", JSON.stringify(post));
+                router.push(`/news/${slug}`);
+              }}
               className="flex items-center text-primary font-semibold group-hover:underline transition-all duration-300 hover:gap-3"
             >
               Read more

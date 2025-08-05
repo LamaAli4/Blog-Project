@@ -68,7 +68,8 @@ export function NewsList({
         <div className="mt-8 flex justify-center">
           <button
             onClick={onLoadMore}
-            className="px-6 py-2 text-sm font-medium text-primary border border-primary rounded-full hover:bg-primary hover:text-white transition"
+            className="px-6 py-2 text-sm font-medium text-primary border border-primary 
+            rounded-full hover:bg-primary hover:text-white transition cursor-pointer"
           >
             Load More
           </button>
