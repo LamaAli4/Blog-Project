@@ -7,8 +7,8 @@ import { NewsFilter } from "@/components/news/NewsFilter";
 import { NewsList } from "@/components/news/NewsList";
 
 export default function NewsPage() {
+    const router = useRouter();
   const [visibleCount, setVisibleCount] = useState(6);
-  const router = useRouter();
   const { posts, sources, isLoading, selectedCategory } = useNews();
 
   const handleLoadMore = () => {

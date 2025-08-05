@@ -1,3 +1,4 @@
+import CategoriesSection from "@/components/CategoriesSection";
 import FeaturedSection from "@/components/FeaturedSection";
 import HeroSection from "@/components/HeroSection";
 
@@ -6,7 +7,8 @@ export default function Home() {
     <div className="min-h-screen bg-background">
       <main>
         <HeroSection />
-        <FeaturedSection/>
+        <FeaturedSection />
+        <CategoriesSection />
       </main>
     </div>
   );
