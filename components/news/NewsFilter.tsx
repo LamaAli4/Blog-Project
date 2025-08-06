@@ -101,11 +101,13 @@ export function NewsFilter({
         </motion.p>
       </div>
 
-      <div className="relative group">
+      <div className="relative group cursor-pointer">
         {showLeftScroll && (
           <button
             onClick={() => scroll("left")}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 flex items-center justify-center bg-background/80 backdrop-blur-sm rounded-full shadow-lg border border-border hover:bg-accent transition-colors"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 
+            flex items-center justify-center bg-background/80 
+            backdrop-blur-sm rounded-full shadow-lg border border-border hover:bg-accent transition-colors"
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
@@ -137,7 +139,8 @@ export function NewsFilter({
               onClick={() =>
                 router.push(`/news?category=${encodeURIComponent(source)}`)
               }
-              className={`flex-shrink-0 px-5 py-2.5 rounded-full border-2 font-medium transition-all duration-300 whitespace-nowrap ${
+              className={`flex-shrink-0 px-5 py-2.5 rounded-full border-2 
+                font-medium transition-all duration-300 whitespace-nowrap cursor-pointer ${
                 selectedCategory?.toLowerCase() === source.toLowerCase()
                   ? "bg-primary text-white border-primary shadow-lg shadow-primary/25 hover:bg-primary/90"
                   : "bg-background text-muted-foreground border-border hover:bg-accent hover:border-primary/50"
@@ -176,7 +179,7 @@ export function NewsFilter({
                 className="p-1 hover:bg-primary/20 rounded-full transition-colors"
                 aria-label="Clear filter"
               >
-                <X className="h-3.5 w-3.5" />
+                <X className="h-3.5 w-3.5 cursor-pointer" />
               </button>
             </div>
           </motion.div>

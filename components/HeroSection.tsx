@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import * as motion from "motion/react-client";
+import Link from "next/link";
 import { Button } from "./ui/button";
 import { ArrowRight } from "lucide-react";
 
@@ -20,7 +21,7 @@ const HeroSection = () => {
             className="text-center lg:text-left "
           >
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-foreground leading-tight mb-6">
-              Writing That{" "}
+              Reading That{" "}
               <span className="text-primary italic">Resonates</span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl">
@@ -32,10 +33,12 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <Button size="lg" className="group">
-                Read the Latest post{" "}
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
+              <Link href="/news">
+                <Button size="lg" className="group">
+                  Read the Latest post
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </Link>
             </motion.div>
           </motion.div>
           {/* Right Content */}

@@ -71,68 +71,82 @@ const FeaturedSection = () => {
         ) : (
           <>
             <div className="grid md:grid-cols-2 gap-8">
-              {featuredPosts.map((post, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                >
-                  <Card className="group cursor-pointer overflow-hidden hover:shadow-xl transition-all duration-300 border-0 bg-card/50 backdrop-blur-xs py-0">
-                    <CardHeader className="p-0">
-                      <div className="relative">
-                        <Image
-                          src={post.urlToImage || "/default-news.jpg"}
-                          alt={post.title}
-                          className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
-                          width={800}
-                          height={500}
-                          unoptimized
-                        />
-                        <div className="absolute top-4 left-4">
-                          <Badge
-                            variant="secondary"
-                            className="bg-background/80 backdrop-blur-xs"
-                          >
-                            {post.source?.name || "News"}
-                          </Badge>
+              {featuredPosts.map((post, index) => {
+                const handleClick = (e: React.MouseEvent) => {
+                  e.preventDefault();
+                  const slug = encodeURIComponent(
+                    post.title.toLowerCase().replace(/\s+/g, "-")
+                  );
+                  sessionStorage.setItem(
+                    "selectedArticle",
+                    JSON.stringify(post)
+                  );
+                  router.push(`/news/${slug}`);
+                };
+
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                  >
+                    <Card
+                      onClick={handleClick}
+                      className="group cursor-pointer overflow-hidden hover:shadow-xl transition-all duration-300 border-0 bg-card/50 backdrop-blur-xs py-0"
+                    >
+                      <CardHeader className="p-0">
+                        <div className="relative">
+                          <div className="w-full h-48 relative">
+                            <Image
+                              fill
+                              src={post.urlToImage || "/default-news.jpg"}
+                              alt={post.title}
+                              className="object-cover transition-transform duration-300 group-hover:scale-105"
+                              unoptimized
+                            />
+                          </div>
+                          <div className="absolute top-4 left-4">
+                            <Badge
+                              variant="secondary"
+                              className="bg-background/80 backdrop-blur-xs"
+                            >
+                              {post.source?.name || "News"}
+                            </Badge>
+                          </div>
                         </div>
-                      </div>
-                    </CardHeader>
-                    <CardContent className="p-6">
-                      <div className="flex items-center text-sm text-muted-foreground mb-3">
-                        <Calendar className="h-4 w-4 mr-2" />
-                        {new Date(post.publishedAt).toLocaleDateString()}
-                      </div>
-                      <h3 className="text-xl font-serif font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
-                        {post.title}
-                      </h3>
-                      <p className="text-muted-foreground mb-4 line-clamp-3">
-                        {post.description}
-                      </p>
-                      <a
-                        href="#"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          const slug = encodeURIComponent(
-                            post.title.toLowerCase().replace(/\s+/g, "-")
-                          );
-                          sessionStorage.setItem(
-                            "selectedArticle",
-                            JSON.stringify(post)
-                          );
-                          router.push(`/news/${slug}`);
-                        }}
-                        className="flex items-center text-primary font-medium group-hover:underline"
-                      >
-                        Read more
-                        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                      </a>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
+                      </CardHeader>
+                      <CardContent className="p-6">
+                        <div className="flex items-center text-sm text-muted-foreground mb-3">
+                          <Calendar className="h-4 w-4 mr-2" />
+                          {new Date(post.publishedAt).toLocaleDateString()}
+                        </div>
+
+                        <h3
+                          onClick={handleClick}
+                          className="text-xl font-serif font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300 cursor-pointer"
+                        >
+                          {post.title}
+                        </h3>
+
+                        <p className="text-muted-foreground mb-4 line-clamp-3">
+                          {post.description}
+                        </p>
+
+                        <a
+                          href="#"
+                          onClick={handleClick}
+                          className="flex items-center text-primary font-medium group-hover:underline"
+                        >
+                          Read more
+                          <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                        </a>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                );
+              })}
             </div>
 
             <div className="mt-10 text-center">

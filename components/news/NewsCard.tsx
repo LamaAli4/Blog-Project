@@ -15,6 +15,16 @@ interface NewsCardProps {
 
 export function NewsCard({ post, index }: NewsCardProps) {
   const router = useRouter();
+
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const slug = encodeURIComponent(
+      post.title.toLowerCase().replace(/\s+/g, "-")
+    );
+    sessionStorage.setItem("selectedArticle", JSON.stringify(post));
+    router.push(`/news/${slug}`);
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -56,9 +66,13 @@ export function NewsCard({ post, index }: NewsCardProps) {
         </CardHeader>
         <CardContent className="p-6 flex flex-col h-full">
           <div className="flex-1">
-            <h3 className="text-xl font-serif font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300 leading-tight line-clamp-2">
+            <h3
+              onClick={handleClick}
+              className="text-xl font-serif font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300 leading-tight line-clamp-2 cursor-pointer"
+            >
               {post.title}
             </h3>
+
             <p className="text-muted-foreground mb-6 line-clamp-3 leading-relaxed">
               {post.description}
             </p>
@@ -71,15 +85,8 @@ export function NewsCard({ post, index }: NewsCardProps) {
             )}
             <a
               href="#"
-              onClick={(e) => {
-                e.preventDefault();
-                const slug = encodeURIComponent(
-                  post.title.toLowerCase().replace(/\s+/g, "-")
-                );
-                sessionStorage.setItem("selectedArticle", JSON.stringify(post));
-                router.push(`/news/${slug}`);
-              }}
-              className="flex items-center text-primary font-semibold group-hover:underline transition-all duration-300 hover:gap-3"
+              onClick={handleClick}
+              className="flex items-center text-primary font-semibold group-hover:underline transition-all duration-300"
             >
               Read more
               <ArrowRight className="ml-2 h-4 w-4 transition-all duration-300 group-hover:translate-x-1 group-hover:scale-110" />
