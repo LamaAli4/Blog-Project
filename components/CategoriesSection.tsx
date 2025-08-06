@@ -2,8 +2,10 @@ import * as motion from "motion/react-client";
 import { Badge } from "./ui/badge";
 import { categories } from "@/lib/data";
 
+
 export default function CategoriesSection() {
   const allCategories = categories;
+
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
       <div className="max-w-7xl mx-auto">
@@ -18,8 +20,8 @@ export default function CategoriesSection() {
             Explore Topics
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Dive into the subjects that spark curiosity and drive innovation in
-            our digital world.
+            Browse the latest headlines across technology, health, business, and
+            more.
           </p>
         </motion.div>
 
@@ -38,9 +40,8 @@ export default function CategoriesSection() {
                     <div
                       dangerouslySetInnerHTML={{ __html: category.icon }}
                       className="w-8 h-8 mx-auto text-primary group-hover:scale-110 transition-transform duration-300"
-                    ></div>
+                    />
                   </div>
-
                   <h3 className="font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
                     {category.name}
                   </h3>
