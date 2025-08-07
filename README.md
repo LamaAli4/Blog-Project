@@ -73,8 +73,14 @@ yarn dev
 Then open your browser and navigate to:
 👉 http://localhost:3000
 
-📄 License
+---
+
+## 📄 License
+
 This project is open-source and free to use for personal and educational purposes.
 
-✨ Credits
+---
+
+## ✨ Credits
+
 Made with ❤️ by Lama Emad Ali
