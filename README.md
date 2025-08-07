@@ -40,7 +40,7 @@ To run this project locally:
 ```bash
 # Clone the repo
 git clone https://github.com/LamaAli4/Blog-Project.git
-cd blog-homepage
+cd blog-project
 
 # Install dependencies
 npm install
