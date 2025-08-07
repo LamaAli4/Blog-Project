@@ -1,4 +1,4 @@
-# 🌐 Blog Homepage (Articles with mock API News)– Built with Next.js 15 & Shadcn UI
+# 🌐 Blog Homepage (Articles with mock API News) – Built with Next.js 15 & Shadcn UI
 
 A sleek and modern blog homepage created using the latest **Next.js 15 App Router**, **Tailwind CSS v4**, **Shadcn UI components**, and **motion.dev** for smooth animations.
 
@@ -23,28 +23,31 @@ This project is fully responsive, performance-optimized, and built to provide a 
 - 📰 Includes all key blog homepage sections:
   - Hero Section
   - Navbar + Mobile Navigation (Shadcn Sheet)
-  - Articles (Shadcn Card)
-  - About page for website with lucide react icon
-  - Contact page and link form with Formspree to receive message in email
-  - Categories with Animations
-  - Quotes Section (random on reload)
-  - Footer with Shadcn Input & Button
+  - Articles (Shadcn Card) powered by a mock API
+  - About Page with Lucide Icons
+  - Contact Page integrated with Formspree (email messaging)
+  - Categories with animated transitions
+  - Randomized Quote Section on reload
+  - Footer with Email Input & Button
 - ☁️ Deployed **FREE on Vercel**
 
 ---
 
-🧪 Built With
-Next.js 15
+## 🧪 Built With
 
-Tailwind CSS v4
-
-Shadcn UI
-
-Motion.dev
-
-Lucide Icons
-
-TypeScript
+| Technology       | Description                                      |
+|------------------|--------------------------------------------------|
+| **Next.js 15**   | App Router, File-based routing                   |
+| **React 18+**    | Component-based architecture                     |
+| **Tailwind CSS** | Utility-first CSS framework                      |
+| **Shadcn UI**    | Accessible and customizable UI components        |
+| **Motion.dev**   | Framer Motion animation library                  |
+| **next-themes**  | Theme toggling (light/dark mode)                 |
+| **Lucide Icons** | Icon library for React                           |
+| **Formspree**    | Form backend to receive messages via email       |
+| **TypeScript**   | Type-safe JavaScript                             |
+| **Custom Hooks** | React hooks for clean and reusable logic         |
+| **Reusable Components** | Modular UI structure for maintainability |
 
 ---
 
@@ -67,8 +70,11 @@ npm run dev
 # or
 yarn dev
 
+Then open your browser and navigate to:
+👉 http://localhost:3000
 
+📄 License
+This project is open-source and free to use for personal and educational purposes.
 
-
-
-```
+✨ Credits
+Made with ❤️ by Lama Emad Ali
