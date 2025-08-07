@@ -11,7 +11,12 @@ export function useNews(selectedCategory: string | null) {
         const fetchNews = async () => {
             setIsLoading(true);
             try {
-                const res = await axios.get("/api/news");
+                const baseUrl =
+                    typeof window === "undefined"
+                        ? process.env.NEXT_PUBLIC_SITE_URL
+                        : "";
+
+                const res = await axios.get(`${baseUrl}/api/news`);
                 const articles: NewsPost[] = res.data.articles || [];
 
                 const filtered = selectedCategory
