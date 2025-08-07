@@ -4,15 +4,8 @@ import { motion } from "framer-motion";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import {
-  Mail,
-  MapPin,
-  Phone,
-  Send,
-  Linkedin,
-  Github,
-  Twitter,
-} from "lucide-react";
+import { Mail, MapPin, Phone, Send } from "lucide-react";
+import { FaGithub, FaTwitter, FaLinkedin, FaFacebook } from "react-icons/fa";
 
 export default function ContactPage() {
   const container = {
@@ -44,9 +37,9 @@ export default function ContactPage() {
             Get In Touch
           </h1>
           <p className="text-muted-foreground text-xl max-w-2xl mx-auto">
-            Have questions, suggestions, or just want to say hello? We&apos;d love to
-            hear from you. Fill out the form or reach out through our social
-            channels.
+            Have questions, suggestions, or just want to say hello? We&apos;d
+            love to hear from you. Fill out the form or reach out through our
+            social channels.
           </p>
         </motion.div>
 
@@ -76,7 +69,7 @@ export default function ContactPage() {
               <div>
                 <h3 className="text-lg font-medium text-foreground">Email</h3>
                 <a
-                  href="lama2015678@gmail.com"
+                  href="mailto:lama2015678@gmail.com?subject=Hello&body=I%20want%20to%20contact%20you"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   lama2015678@gmail.com
@@ -100,22 +93,25 @@ export default function ContactPage() {
               </h3>
               <div className="flex space-x-4">
                 <a
-                  href="#"
+                  href="https://github.com/LamaAli4"
+                  target="_blank"
                   className="p-2 rounded-full bg-secondary hover:bg-secondary/80 text-foreground transition-colors"
                 >
-                  <Github className="w-5 h-5" />
+                  <FaGithub className="w-5 h-5" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.facebook.com/lamaemad.ali/"
+                  target="_blank"
                   className="p-2 rounded-full bg-secondary hover:bg-secondary/80 text-foreground transition-colors"
                 >
-                  <Twitter className="w-5 h-5" />
+                  <FaFacebook className="w-5 h-5" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/lama-emad-ali-8a60942a5/"
+                  target="_blank"
                   className="p-2 rounded-full bg-secondary hover:bg-secondary/80 text-foreground transition-colors"
                 >
-                  <Linkedin className="w-5 h-5" />
+                  <FaLinkedin className="w-5 h-5" />
                 </a>
               </div>
             </motion.div>

@@ -7,9 +7,9 @@ export async function GET() {
 
         const response = await axios.get("https://newsapi.org/v2/everything", {
             params: {
-                q: "tesla",
-                from: "2025-07-05",
-                sortBy: "publishedAt",
+                q: "apple",
+                from: "2025-08-06",
+                sortBy: "popularity",
                 apiKey,
             },
         });

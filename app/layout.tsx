@@ -3,7 +3,7 @@ import Navigation from "@/components/Navigation";
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import { ScrollToTopButton } from "@/components/common/ScrollToTopButton";
+import { ScrollToTopButton } from "@/components/Helper/ScrollToTopButton";
 import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });

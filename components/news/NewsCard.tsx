@@ -38,10 +38,7 @@ export function NewsCard({ post, index }: NewsCardProps) {
           <div className="relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10" />
             <Image
-              src={
-                post.urlToImage ||
-                "/placeholder.svg?height=300&width=600&query=news"
-              }
+              src={post.urlToImage || "/default.jpeg"}
               alt={post.title}
               className="w-full h-56 object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
               width={600}

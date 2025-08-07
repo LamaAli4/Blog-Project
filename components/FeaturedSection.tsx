@@ -101,7 +101,7 @@ const FeaturedSection = () => {
                           <div className="w-full h-48 relative">
                             <Image
                               fill
-                              src={post.urlToImage || "/default-news.jpg"}
+                              src={post.urlToImage || "/default.jpeg"}
                               alt={post.title}
                               className="object-cover transition-transform duration-300 group-hover:scale-105"
                               unoptimized
