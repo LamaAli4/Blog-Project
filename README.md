@@ -1,4 +1,4 @@
-# 🌐 Blog Homepage – Built with Next.js 15 & Shadcn UI
+# 🌐 Blog Homepage (Articles with mock API News)– Built with Next.js 15 & Shadcn UI
 
 A sleek and modern blog homepage created using the latest **Next.js 15 App Router**, **Tailwind CSS v4**, **Shadcn UI components**, and **motion.dev** for smooth animations.
 
@@ -14,22 +14,37 @@ This project is fully responsive, performance-optimized, and built to provide a 
 
 ## 🚀 Features
 
-- ✅ **Next.js 15** App Router
-- 🎨 Fully styled with **Tailwind CSS v4**
-- 🧩 Beautiful UI built with **Shadcn UI components**
-- 🌙 Light & Dark mode toggle with **next-themes**
-- 🌀 Smooth scroll and animations via **motion.dev**
-- 📱 100% **Responsive Design** on all screen sizes
-- 📚 Structured for a real blog:
+- ⚡ Built with **Next.js 15 (App Router)**
+- 🎨 Styled using **Tailwind CSS v4**
+- 🧩 Sleek UI powered by **Shadcn components**
+- 🌗 **Dark/Light Theme Toggle** with next-themes
+- 🎥 Smooth **animations** using motion.dev
+- 📱 Fully **responsive design**
+- 📰 Includes all key blog homepage sections:
   - Hero Section
-  - Featured Posts (Cards)
-  - Animated Categories
-  - Quote Section (random on reload)
-  - Navigation + Mobile Menu (Shadcn Sheet)
-  - Footer with subscription input
+  - Navbar + Mobile Navigation (Shadcn Sheet)
+  - Articles (Shadcn Card)
+  - About page for website with lucide react icon
+  - Contact page and link form with Formspree to receive message in email
+  - Categories with Animations
+  - Quotes Section (random on reload)
+  - Footer with Shadcn Input & Button
+- ☁️ Deployed **FREE on Vercel**
 
 ---
 
+🧪 Built With
+Next.js 15
+
+Tailwind CSS v4
+
+Shadcn UI
+
+Motion.dev
+
+Lucide Icons
+
+TypeScript
 
 ---
 
@@ -52,19 +67,8 @@ npm run dev
 # or
 yarn dev
 
-🧪 Built With
-Next.js 15
-
-Tailwind CSS v4
-
-Shadcn UI
-
-Motion.dev
-
-Lucide Icons
-
-TypeScript
 
 
 
 
+```
