@@ -1,15 +1,18 @@
 "use client";
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
-import { useNews } from "@/hooks/useNews";
+import { useState, Suspense } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { NewsFilter } from "@/components/news/NewsFilter";
 import { NewsList } from "@/components/news/NewsList";
+import { useNews } from "@/hooks/useNews";
 
-export default function NewsPage() {
-    const router = useRouter();
+function NewsContent() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const selectedCategory = searchParams.get("category");
+
   const [visibleCount, setVisibleCount] = useState(6);
-  const { posts, sources, isLoading, selectedCategory } = useNews();
+  const { posts, sources, isLoading } = useNews(selectedCategory);
 
   const handleLoadMore = () => {
     setVisibleCount((prev) => prev + 6);
@@ -38,5 +41,15 @@ export default function NewsPage() {
         />
       </div>
     </section>
+  );
+}
+
+export default function NewsPage() {
+  return (
+    <Suspense
+      fallback={<div className="p-10 text-center">Loading News...</div>}
+    >
+      <NewsContent />
+    </Suspense>
   );
 }

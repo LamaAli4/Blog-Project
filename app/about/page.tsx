@@ -1,7 +1,7 @@
 import AboutPage from "@/components/AboutPage";
 import React from "react";
 
-export const page = () => {
+const page = () => {
   return (
     <div>
       <AboutPage />

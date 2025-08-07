@@ -1,14 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { NewsPost } from "@/types/news";
-import { useSearchParams } from "next/navigation";
 
-export function useNews() {
+export function useNews(selectedCategory: string | null) {
     const [posts, setPosts] = useState<NewsPost[]>([]);
     const [sources, setSources] = useState<string[]>([]);
     const [isLoading, setIsLoading] = useState(true);
-    const searchParams = useSearchParams();
-    const selectedCategory = searchParams.get("category");
 
     useEffect(() => {
         const fetchNews = async () => {
@@ -49,6 +46,5 @@ export function useNews() {
         posts,
         sources,
         isLoading,
-        selectedCategory,
     };
 }
