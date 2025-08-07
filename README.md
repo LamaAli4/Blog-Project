@@ -75,12 +75,6 @@ Then open your browser and navigate to:
 
 ---
 
-## 📄 License
-
-This project is open-source and free to use for personal and educational purposes.
-
----
-
 ## ✨ Credits
 
 Made with ❤️ by Lama Emad Ali
