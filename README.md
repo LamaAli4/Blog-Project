@@ -8,7 +8,7 @@ This project is fully responsive, performance-optimized, and built to provide a 
 
 ## 🖼️ Preview
 
-![Blog Homepage Preview](./public/screenshot.png)
+![Blog Homepage Preview](./public/blog.png)
 
 ---
 
