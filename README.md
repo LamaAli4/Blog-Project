@@ -29,25 +29,26 @@ This project is fully responsive, performance-optimized, and built to provide a 
   - Categories with animated transitions
   - Randomized Quote Section on reload
   - Footer with Email Input & Button
+  - Not-found page
 - ☁️ Deployed **FREE on Vercel**
 
 ---
 
 ## 🧪 Built With
 
-| Technology       | Description                                      |
-|------------------|--------------------------------------------------|
-| **Next.js 15**   | App Router, File-based routing                   |
-| **React 18+**    | Component-based architecture                     |
-| **Tailwind CSS** | Utility-first CSS framework                      |
-| **Shadcn UI**    | Accessible and customizable UI components        |
-| **Motion.dev**   | Framer Motion animation library                  |
-| **next-themes**  | Theme toggling (light/dark mode)                 |
-| **Lucide Icons** | Icon library for React                           |
-| **Formspree**    | Form backend to receive messages via email       |
-| **TypeScript**   | Type-safe JavaScript                             |
-| **Custom Hooks** | React hooks for clean and reusable logic         |
-| **Reusable Components** | Modular UI structure for maintainability |
+| Technology              | Description                                |
+| ----------------------- | ------------------------------------------ |
+| **Next.js 15**          | App Router, File-based routing             |
+| **React 18+**           | Component-based architecture               |
+| **Tailwind CSS**        | Utility-first CSS framework                |
+| **Shadcn UI**           | Accessible and customizable UI components  |
+| **Motion.dev**          | Framer Motion animation library            |
+| **next-themes**         | Theme toggling (light/dark mode)           |
+| **Lucide Icons**        | Icon library for React                     |
+| **Formspree**           | Form backend to receive messages via email |
+| **TypeScript**          | Type-safe JavaScript                       |
+| **Custom Hooks**        | React hooks for clean and reusable logic   |
+| **Reusable Components** | Modular UI structure for maintainability   |
 
 ---
 
@@ -78,3 +79,4 @@ Then open your browser and navigate to:
 ## ✨ Credits
 
 Made with ❤️ by Lama Emad Ali
+```

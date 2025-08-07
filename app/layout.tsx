@@ -1,10 +1,10 @@
 import "./globals.css";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { ScrollToTopButton } from "@/components/Helper/ScrollToTopButton";
-import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const playfair = Playfair_Display({
@@ -13,8 +13,11 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Writing That Resonates - A Modern Blog",
+  title: "Reading That Resonates - A Modern Blog",
   description: "Insights on tech, design, and creativity from a thought leader",
+  icons: {
+    icon: "/public/favicon.ico",
+  },
 };
 
 export default function RootLayout({
