@@ -294,7 +294,8 @@
                   >
                     <Button
                       type="submit"
-                      className="w-full py-6 text-base font-medium bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary transition-all"
+                      className="w-full py-6 text-base font-medium bg-gradient-to-r from-primary to-primary/90 
+                      hover:from-primary/90 hover:to-primary transition-all cursor-pointer"
                     >
                       <Send className="mr-2 h-5 w-5" />
                       Send Message
